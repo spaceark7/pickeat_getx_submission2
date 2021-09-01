@@ -22,7 +22,7 @@ class RestaurantListScreen extends StatelessWidget {
   Widget _buildList(BuildContext context) {
     return Obx(() {
       if (state.searchResult.isNotEmpty) {
-        print(state.searchResult.map((element) => element.name));
+        
         return MediaQuery.removePadding(
           removeTop: true,
           context: context,
@@ -55,7 +55,7 @@ class RestaurantListScreen extends StatelessWidget {
           ),
         );
       } else if (state.isLoading.value == false && state.restaurants.isNotEmpty) {
-        print(state.restaurants);
+       
         return MediaQuery.removePadding(
           removeTop: true,
           context: context,

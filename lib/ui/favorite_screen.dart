@@ -6,18 +6,16 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:pickeat_app/common/utils/ResultState.dart';
 import 'package:pickeat_app/controller/database_controller.dart';
-import 'package:pickeat_app/controller/restaurant_controller.dart';
-import 'package:pickeat_app/data/model/restaurant.dart';
+
 import 'package:pickeat_app/widgets/card_favorite.dart';
-import 'package:pickeat_app/widgets/card_restaurant.dart';
-import 'package:pickeat_app/widgets/fav_card_restaurant.dart';
+
 import 'package:pickeat_app/widgets/platformWidget.dart';
 
 class FavoriteScreen extends StatelessWidget {
   static final routeName = '/favorite_page';
   final DatabaseController dbase = Get.find();
 
-  final Tween<Offset> _offset = Tween(begin: Offset(1, 0), end: Offset(0, 0));
+  // final Tween<Offset> _offset = Tween(begin: Offset(1, 0), end: Offset(0, 0));
   // @override
   // void initState() {
   //   WidgetsBinding.instance!.addPostFrameCallback((_) {

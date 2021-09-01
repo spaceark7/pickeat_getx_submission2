@@ -23,7 +23,7 @@ class SchedulingController extends GetxController {
          
          );
     } else {
-        print('Scheduling News Canceled');
+        print('Scheduling Reminders Canceled');
         update();
         return await AndroidAlarmManager.cancel(1);
     }

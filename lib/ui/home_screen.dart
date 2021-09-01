@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:pickeat_app/common/utils/notification_helper.dart';
 import 'package:pickeat_app/controller/restaurant_controller.dart';
+import 'package:pickeat_app/ui/detail_restaurant_screen.dart';
 import 'package:pickeat_app/ui/favorite_screen.dart';
 import 'package:pickeat_app/ui/profile_screen.dart';
 import 'package:pickeat_app/ui/restaurant_list_screen.dart';
@@ -20,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final NotificationHelper _notificationHelper = NotificationHelper();
   int _bottomNavIndex = 0;
   RestaurantController state = Get.find();
   ConnectivityResult _connectionStatus = ConnectivityResult.none;
@@ -29,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    _notificationHelper.configureSelectNotificationSubject(DetailScreen.routeName);
     initConnectivity();
 
     _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
@@ -37,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _connectivitySubscription.cancel();
+     selectNotificationSubject.close();
     super.dispose();
   }
 
