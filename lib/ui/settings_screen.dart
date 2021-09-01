@@ -81,7 +81,7 @@ Widget _buildList(BuildContext context) {
                 style: Theme.of(context).textTheme.bodyText1,
               ),
               trailing: Switch.adaptive(
-                  value: scheduled.isScheduled,
+                  value: scheduled.isScheduled.value,
                   onChanged: (value) async {
                     if (Platform.isIOS) {
                       customDialog(context);

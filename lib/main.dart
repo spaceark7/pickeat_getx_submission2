@@ -4,6 +4,7 @@ import 'package:android_alarm_manager/android_alarm_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
+import 'package:pickeat_app/common/navigation.dart';
 
 import 'package:pickeat_app/common/style.dart';
 import 'package:pickeat_app/common/utils/background_process.dart';
@@ -50,6 +51,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      navigatorKey: navigatorKey,
       title: 'PickEat',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

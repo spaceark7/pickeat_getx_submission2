@@ -28,9 +28,10 @@ class BackgroundService {
     print('Alarm fired!');
     final NotificationHelper _notificationHelper = NotificationHelper();
     var result = await ApiService().restaurantList();
-    print("fetch background service");
-    print(result.restaurants.map((e) => e.name));
+   
     await _notificationHelper.showNotification(flutterLocalNotificationsPlugin, result);
+     print("fetch background service");
+    print(result.restaurants.map((e) => e.name));
 
     _uiSendPort ??= IsolateNameServer.lookupPortByName(_isolateName);
     _uiSendPort?.send(null);

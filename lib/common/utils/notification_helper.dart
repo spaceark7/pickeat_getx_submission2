@@ -43,7 +43,8 @@ class NotificationHelper {
     var titleNotification = "<b>Today Recommendations</b>";
     var titleNews = restaurants.restaurants[0].name;
 
-    await flutterLocalNotificationsPlugin.show(0, titleNotification, titleNews, platformChannelSpesifics, payload: json.encode(restaurants.toJson()));
+    await flutterLocalNotificationsPlugin.show(
+      0, titleNotification, titleNews, platformChannelSpesifics, payload: json.encode(restaurants.toJson()));
   }
 
   void configureSelectNotificationSubject(String route) {
