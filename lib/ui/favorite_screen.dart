@@ -71,7 +71,9 @@ class FavoriteScreen extends StatelessWidget {
 
   Widget _buildIOS(BuildContext context) {
     return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(middle: Text('Your Favorite Places', style: Theme.of(context).textTheme.headline5!.apply(color: Colors.black))), child: _buildList()
+        navigationBar: CupertinoNavigationBar(
+          middle: Text(
+            'Your Favorite Places', style: Theme.of(context).textTheme.headline5!.apply(color: Colors.black))), child: _buildList()
         //   SafeArea(
         //   child: AnimatedList(
         //       key: _listKey,

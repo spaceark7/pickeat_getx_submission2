@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:pickeat_app/common/style.dart';
+import 'package:pickeat_app/common/utils/notification_helper.dart';
 import 'package:pickeat_app/controller/database_controller.dart';
 import 'package:pickeat_app/data/database/database_helper.dart';
 import 'package:pickeat_app/ui/detail_restaurant_screen.dart';
@@ -11,7 +13,12 @@ import 'package:pickeat_app/ui/profile_screen.dart';
 import 'controller/restaurant_controller.dart';
 import 'data/model/restaurant.dart';
 
-void main() {
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+ final NotificationHelper _notificationHelper = NotificationHelper();
+ await _notificationHelper.initNotifications(flutterLocalNotificationsPlugin);
+ _notificationHelper.requestIOSPermissions(flutterLocalNotificationsPlugin);
   runApp(MyApp());
 }
 

@@ -52,4 +52,18 @@ class NotificationHelper {
       Navigation.intentWithData(route, restaurant);
     });
   }
+
+  void requestIOSPermissions(
+   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) {
+ flutterLocalNotificationsPlugin
+     .resolvePlatformSpecificImplementation<
+         IOSFlutterLocalNotificationsPlugin>()
+     ?.requestPermissions(
+       alert: true,
+       badge: true,
+       sound: true,
+     );
+}
+
+
 }
